@@ -261,15 +261,14 @@ section {
     }
 }
 
-
 .pricing {
 
     .box-container {
         @include grid(31rem);
 
         .box {
-            padding      : 3rem 2rem;
-            text-align   : center;
+            padding   : 3rem 2rem;
+            text-align: center;
 
             &:nth-child(2) {
                 background-color: var(--light-bg);
@@ -327,6 +326,155 @@ section {
 
 }
 
+.reviews {
+
+    .box-container {
+        @include grid(31rem);
+
+        .box {
+            .user {
+                @include flex(center);
+
+                img {
+                    height       : 7rem;
+                    width        : 7rem;
+                    border-radius: 50%;
+                }
+
+                .info {
+
+                    h3 {
+                        @include titleTextStyle(2rem, var(--black))
+                    }
+
+                    .stars {
+                        @include titleTextStyle(1.5rem, var(--red));
+                        padding: 0;
+                    }
+                }
+            }
+
+            .text {
+                @include paragraphTextStyle(1.5rem, var(--light-color));
+                background-color: var(--light-bg);
+                border-radius   : .5rem;
+                margin-top      : 3rem;
+                padding         : 2rem;
+                position        : relative;
+
+                &::before {
+                    content         : '';
+                    position        : absolute;
+                    top             : -1rem;
+                    left            : 2rem;
+                    width           : 2rem;
+                    height          : 2rem;
+                    background-color: var(--light-bg);
+                    transform       : rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+.contact {
+
+    .row {
+
+        display  : flex;
+        flex-wrap: wrap;
+        gap      : 2rem;
+
+        .box-container {
+            width: 35rem;
+
+            .box {
+
+                background-color: var(--light-bg);
+                border-radius   : .5rem;
+                padding         : 2rem;
+
+                h3 {
+                    @include titleTextStyle(2rem, var(--black));
+                    padding-bottom: 1rem;
+                }
+
+                p {
+                    @include titleTextStyle(1.5rem, var(--light-color));
+                    padding-top: 1rem;
+
+                    span {
+                        color        : var(--red);
+                        padding-right: .5rem;
+                    }
+                }
+
+
+                &:first-child {
+                    margin-bottom: 2rem;
+
+                    p:nth-child(3) {
+                        text-transform: lowercase;
+                    }
+                }
+
+
+
+                &:nth-child(2) {
+                    p {
+                        border-bottom: 1px dotted transparent;
+
+                        span {
+                            width: 12rem;
+                        }
+
+                        &:hover {
+                            border-bottom: 1px dotted #333;
+                        }
+                    }
+                }
+            }
+        }
+
+        form {
+            flex            : 1 1 42rem;
+            padding         : 2rem;
+            border-radius   : .5rem;
+            background-color: var(--light-bg);
+
+            h3 {
+                @include titleTextStyle(2.5rem, var(--black));
+                margin-bottom: 1rem;
+            }
+
+            .input-box {
+                @include titleTextStyle(1.7rem, var(--light-color));
+                background-color: var(--white);
+                width           : 100%;
+                margin          : 0.7rem 0;
+                padding         : 1.2rem 1.4rem;
+                border-radius   : .5rem;
+                text-transform  : none;
+            }
+
+            textarea {
+                height: 15rem;
+                resize: none;
+            }
+
+            .btn {
+                background-color: var(--red);
+                color           : #fff;
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+
+    }
+
+}
 
 
 
@@ -386,10 +534,23 @@ section {
 
 }
 
+@media screen and (max-width: 730px) {
+    .contact {
+        .box-container {
+            margin: 0 auto;
+        }
+    }
+}
+
 @media screen and (max-width: 555px) {
 
     html {
         font-size: 50%;
     }
 
+    .contact {
+        .box-container {
+            margin: 0 auto;
+        }
+    }
 }
