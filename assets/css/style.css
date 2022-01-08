@@ -8,7 +8,6 @@
   list-style: none;
   text-decoration: none;
   user-select: none;
-  scroll-behavior: smooth;
   text-transform: capitalize;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
@@ -25,13 +24,14 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   scroll-padding-top: 8rem; }
   html::-webkit-scrollbar {
     width: 1rem; }
   html::-webkit-scrollbar-track {
     background: transparent; }
   html::-webkit-scrollbar-thumb {
-    background: var(--red);
+    background-color: var(--red);
     border-radius: 5rem; }
 
 body {
@@ -153,6 +153,55 @@ section {
       color: var(--light-color);
       padding: 1rem 0;
       line-height: 2; }
+
+.work .box-container {
+  columns: 3 25rem; }
+  .work .box-container img {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: .5rem; }
+
+.pricing .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem; }
+  .pricing .box-container .box {
+    padding: 3rem 2rem;
+    text-align: center; }
+    .pricing .box-container .box:nth-child(2) {
+      background-color: var(--light-bg);
+      border: 0; }
+      .pricing .box-container .box:nth-child(2) .btn {
+        background-color: var(--red);
+        color: #fff; }
+        .pricing .box-container .box:nth-child(2) .btn:hover {
+          opacity: .8; }
+    .pricing .box-container .box h3 {
+      font-size: 2.5rem;
+      color: #FFF;
+      display: inline-block;
+      padding: .5rem 1.5rem;
+      border-radius: .5rem;
+      margin-bottom: 1rem;
+      background-color: var(--red); }
+    .pricing .box-container .box .price {
+      padding: .5rem 0;
+      font-size: 5rem;
+      color: var(--black);
+      margin-bottom: 1rem;
+      font-weight: bolder; }
+      .pricing .box-container .box .price span {
+        font-size: 3rem;
+        color: var(--red); }
+    .pricing .box-container .box ul {
+      padding: 1rem 0; }
+      .pricing .box-container .box ul li {
+        padding: 1rem 0;
+        font-size: 2rem;
+        color: var(--black); }
+        .pricing .box-container .box ul li i {
+          padding-right: .8rem;
+          color: var(--red); }
 
 @media screen and (max-width: 1040px) {
   html {

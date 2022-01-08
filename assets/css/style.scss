@@ -10,7 +10,6 @@
     list-style     : none;
     text-decoration: none;
     user-select    : none;
-    scroll-behavior: smooth;
     text-transform : capitalize;
     box-sizing     : border-box;
     font-family    : 'Nunito', sans-serif;
@@ -30,6 +29,7 @@ html {
 
     font-size         : 62.5%;
     overflow-x        : hidden;
+    scroll-behavior   : smooth;
     scroll-padding-top: 8rem;
 
     &::-webkit-scrollbar {
@@ -41,8 +41,8 @@ html {
     }
 
     &::-webkit-scrollbar-thumb {
-        background   : var(--red);
-        border-radius: 5rem;
+        background-color: var(--red);
+        border-radius   : 5rem;
     }
 }
 
@@ -218,7 +218,6 @@ section {
     }
 }
 
-
 .services {
 
     .box-container {
@@ -249,7 +248,84 @@ section {
     }
 }
 
+.work {
 
+    .box-container {
+        columns: 3 25rem;
+
+        img {
+            width        : 100%;
+            margin-bottom: 2rem;
+            border-radius: .5rem;
+        }
+    }
+}
+
+
+.pricing {
+
+    .box-container {
+        @include grid(31rem);
+
+        .box {
+            padding      : 3rem 2rem;
+            text-align   : center;
+
+            &:nth-child(2) {
+                background-color: var(--light-bg);
+                border          : 0;
+
+                .btn {
+                    background-color: var(--red);
+                    color           : #fff;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+            }
+
+            h3 {
+                font-size       : 2.5rem;
+                color           : #FFF;
+                display         : inline-block;
+                padding         : .5rem 1.5rem;
+                border-radius   : .5rem;
+                margin-bottom   : 1rem;
+                background-color: var(--red);
+            }
+
+            .price {
+                @include titleTextStyle(5rem, var(--black));
+                margin-bottom: 1rem;
+                font-weight  : bolder;
+
+                span {
+                    font-size: 3rem;
+                    color    : var(--red);
+                }
+            }
+
+            ul {
+                padding: 1rem 0;
+
+                li {
+                    padding  : 1rem 0;
+                    font-size: 2rem;
+                    color    : var(--black);
+
+                    i {
+                        padding-right: .8rem;
+                        color        : var(--red);
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}
 
 
 
