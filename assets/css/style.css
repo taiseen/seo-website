@@ -43,6 +43,30 @@ body.darkTheme {
   --light-color: #EEE;
   --light-bg: #666; }
 
+section {
+  padding: 3rem 9%; }
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: .5rem;
+  background: var(--light-bg);
+  cursor: pointer;
+  color: var(--black);
+  padding: 1rem 3rem;
+  font-size: 1.8rem; }
+  .btn:hover {
+    background: var(--red);
+    color: #FFF; }
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 4rem;
+  color: var(--black); }
+  .heading span {
+    color: var(--red); }
+
 .header {
   position: sticky;
   top: 0;
@@ -53,6 +77,7 @@ body.darkTheme {
   padding: 2rem 9%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem; }
   .header .logo {
     margin-right: auto;
@@ -81,13 +106,64 @@ body.darkTheme {
   .header #theme-btn.fa-sun {
     transform: rotate(180deg); }
 
-@media screen and (max-width: 991px) {
+.home .box {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  gap: 1rem; }
+  .home .box:nth-child(2) {
+    flex-wrap: wrap-reverse;
+    padding: 3rem 0; }
+  .home .box .image {
+    flex: 1 1 42rem; }
+    .home .box .image img {
+      width: 100%; }
+  .home .box .content {
+    flex: 1 1 42rem; }
+    .home .box .content h3 {
+      padding: .5rem 0;
+      font-size: 3rem;
+      color: var(--black); }
+    .home .box .content p {
+      font-size: 1.5rem;
+      color: var(--light-color);
+      padding: 1rem 0;
+      line-height: 2; }
+
+.services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem; }
+  .services .box-container .box {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    border-radius: .5rem; }
+    .services .box-container .box img {
+      height: 10rem;
+      margin-bottom: 1rem; }
+    .services .box-container .box h3 {
+      padding: .5rem 0;
+      font-size: 2rem;
+      color: var(--black); }
+    .services .box-container .box p {
+      font-size: 1.5rem;
+      color: var(--light-color);
+      padding: 1rem 0;
+      line-height: 2; }
+
+@media screen and (max-width: 1040px) {
   html {
     font-size: 55%; }
 
   .header {
-    padding: 2rem; } }
-@media screen and (max-width: 768px) {
+    padding: 2rem; }
+
+  section {
+    padding: 3rem 2rem; } }
+@media screen and (max-width: 790px) {
   .header #menu-btn {
     display: inline-block; }
     .header #menu-btn.fa-times {

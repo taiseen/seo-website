@@ -67,9 +67,57 @@ body.darkTheme {
 @mixin flex($value) {
     display    : flex;
     align-items: $value;
+    flex-wrap  : wrap;
     gap        : 1rem;
 }
 
+@mixin titleTextStyle($size, $color) {
+    padding  : .5rem 0;
+    font-size: $size;
+    color    : $color;
+}
+
+@mixin paragraphTextStyle($size, $color) {
+    font-size  : $size;
+    color      : $color;
+    padding    : 1rem 0;
+    line-height: 2;
+}
+
+// common padding for all Section tag in page
+section {
+    padding: 3rem 9%;
+}
+
+// common style for all Button in page
+.btn {
+
+    display      : inline-block;
+    margin-top   : 1rem;
+    border-radius: .5rem;
+    background   : var(--light-bg);
+    cursor       : pointer;
+    color        : var(--black);
+    padding      : 1rem 3rem;
+    font-size    : 1.8rem;
+
+    &:hover {
+        background: var(--red);
+        color     : #FFF;
+    }
+}
+
+// common style for all Heading in page
+.heading {
+    text-align   : center;
+    margin-bottom: 3rem;
+    font-size    : 4rem;
+    color        : var(--black);
+
+    span {
+        color: var(--red);
+    }
+}
 
 .header {
 
@@ -132,6 +180,74 @@ body.darkTheme {
 
 }
 
+.home {
+
+    .box {
+        min-height: 70vh;
+        @include flex(center);
+        gap: 1rem;
+
+
+        // when screen going to small then 
+        // flip into stack in text+img 
+        &:nth-child(2) {
+            flex-wrap: wrap-reverse;
+            padding  : 3rem 0;
+        }
+
+        .image {
+            flex: 1 1 42rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            flex: 1 1 42rem;
+
+            h3 {
+                @include titleTextStyle(3rem, var(--black));
+            }
+
+            p {
+                @include paragraphTextStyle(1.5rem, var(--light-color));
+            }
+        }
+
+    }
+}
+
+
+.services {
+
+    .box-container {
+
+        @include grid(31rem);
+
+        .box {
+
+            text-align      : center;
+            padding         : 2rem;
+            background-color: var(--light-bg);
+            border-radius   : .5rem;
+
+
+            img {
+                height       : 10rem;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                @include titleTextStyle(2rem, var(--black));
+            }
+
+            p {
+                @include paragraphTextStyle(1.5rem, var(--light-color));
+            }
+        }
+    }
+}
 
 
 
@@ -139,11 +255,7 @@ body.darkTheme {
 
 
 
-
-
-
-
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1040px) {
 
     html {
         font-size: 55%;
@@ -153,12 +265,19 @@ body.darkTheme {
         padding: 2rem;
     }
 
+    // common padding for all section tag in page
+    section {
+        padding: 3rem 2rem;
+    }
+
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 790px) {
 
 
     .header {
+
+        // toggle menu bar show in this screen regulation 
         #menu-btn {
             display: inline-block;
 
@@ -177,19 +296,19 @@ body.darkTheme {
             transition      : .3s ease;
             clip-path       : polygon(0 0, 100% 0, 100% 0, 0 0);
 
+            // toggle menu bar click & show dropdown menu by this...
             &.userClick {
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
 
             a {
-                display   : block;
-                margin    : 2rem;
+                display: block;
+                margin : 2rem;
             }
         }
     }
 
 }
-
 
 @media screen and (max-width: 555px) {
 
