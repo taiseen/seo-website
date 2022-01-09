@@ -1,11 +1,11 @@
 // 7 Jan 2022
 
-const HtmlBody = document.body;
-const themeBtn = document.getElementById('theme-btn');
-const menuBtn = document.getElementById('menu-btn');
-const navbar = document.querySelector('.navbar');
-const navbarLink = document.querySelectorAll('.navbar a');
-const scrollIndicator = document.querySelector('.header .scroll-indicator');
+let HtmlBody = document.body;
+let themeBtn = document.getElementById('theme-btn');
+let menuBtn = document.getElementById('menu-btn');
+let navbar = document.querySelector('.navbar');
+let navbarLink = document.querySelectorAll('.navbar a');
+let scrollIndicator = document.querySelector('.header .scroll-indicator');
 
 
 menuBtn.addEventListener('click', () => {
@@ -13,12 +13,18 @@ menuBtn.addEventListener('click', () => {
     navbar.classList.toggle('userClick');
 });
 
+// Method - 1
+// after clicking in the dropdown menu 
+// auto close that dropdown menu
+// click + close --> instantly 
 navbarLink.forEach(link => {
     link.addEventListener('click', () => {
         // you are awesome... <3
+        menuBtn.classList.remove('fa-times');
         navbar.classList.remove('userClick');
     });
 });
+
 
 themeBtn.addEventListener('click', () => {
 
@@ -34,13 +40,21 @@ themeBtn.addEventListener('click', () => {
 });
 
 
-window.addEventListener('scroll', () => {
-    menuBtn.classList.remove('fa-times');
-    navbar.classList.remove('active');
 
-    let maxHeight = window.document.body.scrollHeight -  window.innerHeight;
+window.addEventListener('scroll', () => {
+
+    // Method - 2
+    // after clicking in the dropdown menu 
+    // auto close that dropdown menu
+    // click + depend upon scrolling for close 
+
+    // menuBtn.classList.remove('fa-times');
+    // navbar.classList.remove('userClick');
+
+    // calculate user screen view portions...
+    let maxHeight = window.document.body.scrollHeight - window.innerHeight;
     let percentage = ((window.scrollY / maxHeight)) * 100;
 
-    // HTML display show... 
+    // at HTML horizontal bar display show incrementally... 
     scrollIndicator.style.width = percentage + '%';
 });

@@ -178,12 +178,14 @@ section {
     }
 
     .scroll-indicator {
-        position        : absolute;
-        top             : 99%;
-        left            : 0;
-        // width           : 100%;
-        height          : 1rem;
-        background-color: var(--red);
+        position                     : absolute;
+        top                          : 99%;
+        left                         : 0;
+        // width                     : come form JS - by screen calculation;
+        height                       : 1rem;
+        border-top-right-radius      : 3px;
+        border-bottom-right-radius   : 3px;
+        background-color             : var(--red);
     }
 
 }
@@ -433,7 +435,7 @@ section {
                         border-bottom: 1px dotted transparent;
 
                         span {
-                            width: 12rem;
+                            width: 13rem;
                         }
 
                         &:hover {
