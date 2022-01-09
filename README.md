@@ -7,5 +7,5 @@
 - Light/Dark Theme Toggling
 - Dropdown Menu Button 
 - After Clicking Dropdown Link - its auto close
-- Page Loader Percentage Bar
+- Page Loader Percentage Bar OR Scroll Indicator
 - Responsiveness

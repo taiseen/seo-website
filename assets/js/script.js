@@ -5,6 +5,7 @@ const themeBtn = document.getElementById('theme-btn');
 const menuBtn = document.getElementById('menu-btn');
 const navbar = document.querySelector('.navbar');
 const navbarLink = document.querySelectorAll('.navbar a');
+const scrollIndicator = document.querySelector('.header .scroll-indicator');
 
 
 menuBtn.addEventListener('click', () => {
@@ -33,7 +34,13 @@ themeBtn.addEventListener('click', () => {
 });
 
 
-window.addEventListener('onscroll', () => {
+window.addEventListener('scroll', () => {
     menuBtn.classList.remove('fa-times');
     navbar.classList.remove('active');
+
+    let maxHeight = window.document.body.scrollHeight -  window.innerHeight;
+    let percentage = ((window.scrollY / maxHeight)) * 100;
+
+    // HTML display show... 
+    scrollIndicator.style.width = percentage + '%';
 });
