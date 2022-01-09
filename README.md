@@ -4,6 +4,8 @@
 
 ## Learning Context
 - SASS ==> variable , nesting , @mixing + @include 
-- Light/Dark theme toggling
+- Light/Dark Theme Toggling
 - Dropdown Menu Button 
+- After Clicking Dropdown Link - its auto close
+- Page Loader Percentage Bar
 - Responsiveness
