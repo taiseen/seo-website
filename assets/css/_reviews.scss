@@ -1,0 +1,50 @@
+.reviews {
+
+    .box-container {
+        @include grid(31rem);
+
+        .box {
+            .user {
+                @include flex(center);
+
+                img {
+                    height       : 7rem;
+                    width        : 7rem;
+                    border-radius: 50%;
+                }
+
+                .info {
+
+                    h3 {
+                        @include titleTextStyle(2rem, var(--black))
+                    }
+
+                    .stars {
+                        @include titleTextStyle(1.5rem, var(--red));
+                        padding: 0;
+                    }
+                }
+            }
+
+            .text {
+                @include paragraphTextStyle(1.5rem, var(--light-color));
+                background-color: var(--light-bg);
+                border-radius   : .5rem;
+                margin-top      : 3rem;
+                padding         : 2rem;
+                position        : relative;
+
+                &::before {
+                    content         : '';
+                    position        : absolute;
+                    top             : -1rem;
+                    left            : 2.4rem;
+                    width           : 2rem;
+                    height          : 2rem;
+                    background-color: var(--light-bg);
+                    transform       : rotate(45deg);
+                }
+            }
+        }
+    }
+}

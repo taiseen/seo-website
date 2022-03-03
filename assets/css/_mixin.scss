@@ -1,0 +1,25 @@
+@mixin grid ($value) {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax($value, 1fr));
+    gap                  : 2rem;
+}
+
+@mixin flex($value) {
+    display    : flex;
+    align-items: $value;
+    flex-wrap  : wrap;
+    gap        : 1rem;
+}
+
+@mixin titleTextStyle($size, $color) {
+    padding  : .5rem 0;
+    font-size: $size;
+    color    : $color;
+}
+
+@mixin paragraphTextStyle($size, $color) {
+    font-size  : $size;
+    color      : $color;
+    padding    : 1rem 0;
+    line-height: 2;
+}

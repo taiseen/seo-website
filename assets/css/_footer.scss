@@ -1,0 +1,56 @@
+.quick-links {
+
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    gap             : 2rem;
+    background-color: var(--black);
+
+    .logo {
+        color    : var(--white);
+        font-size: 2rem;
+
+        i {
+            color: var(--red);
+        }
+    }
+
+    .links {
+
+        a {
+            margin-left: 2rem;
+            @include titleTextStyle(1.8rem, var(--white));
+
+            &:hover {
+                color: var(--red);
+            }
+        }
+    }
+}
+
+.credit {
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    gap             : 2rem;
+    background-color: var(--light-bg);
+
+    p {
+        @include titleTextStyle(2rem, var(--light-color));
+
+        span {
+            color: var(--red);
+        }
+    }
+
+    .share {
+        a {
+            margin-left: 2rem;
+            @include titleTextStyle(3rem, var(--black));
+
+            &:hover {
+                color: var(--red);
+            }
+        }
+    }
+}

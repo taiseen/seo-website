@@ -1,0 +1,39 @@
+.home {
+    margin-top: 4rem;
+
+    .box {
+        min-height: 50vh;
+        @include flex(center);
+
+        // when screen going to small then 
+        // flip into stack in text+img 
+        &:nth-child(2) {
+            flex-wrap: wrap-reverse;
+            padding  : 3rem 0;
+
+            .image {
+                order: 1;
+            }
+        }
+
+        .image {
+            flex: 1 1 42rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            flex: 1 1 42rem;
+
+            h3 {
+                @include titleTextStyle(3rem, var(--black));
+            }
+
+            p {
+                @include paragraphTextStyle(1.5rem, var(--light-color));
+            }
+        }
+    }
+}

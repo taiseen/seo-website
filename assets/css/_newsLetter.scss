@@ -1,0 +1,47 @@
+.newsLetter {
+
+    background-color: var(--red);
+    display         : flex;
+    flex-wrap       : wrap;
+    align-items     : center;
+    gap             : 2rem;
+
+    .content {
+
+        flex: 1 1 42rem;
+
+        h3 {
+            @include titleTextStyle(6rem, #FFF);
+        }
+
+        p {
+            @include titleTextStyle(2.2rem, #FFF);
+        }
+    }
+
+    form {
+        flex            : 1 1 42rem;
+        background-color: #fff;
+        border-radius   : .5rem;
+        padding         : 0.7rem;
+        display         : flex;
+
+        .email {
+            @include titleTextStyle(1.6rem, #000);
+            width         : 100%;
+            padding       : 0 1.4rem;
+            text-transform: none;
+        }
+
+        .btn {
+            margin-top      : 0;
+            background-color: #333;
+            color           : #FFF;
+
+            &:hover {
+                background-color: var(--red);
+
+            }
+        }
+    }
+}

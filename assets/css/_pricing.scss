@@ -1,0 +1,61 @@
+.pricing {
+
+    .box-container {
+        @include grid(31rem);
+
+        .box {
+            padding   : 3rem 2rem;
+            text-align: center;
+
+            &:nth-child(2) {
+                background-color: var(--light-bg);
+                border          : 0;
+
+                .btn {
+                    background-color: var(--red);
+                    color           : #fff;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+            }
+
+            h3 {
+                font-size       : 2.5rem;
+                color           : #FFF;
+                display         : inline-block;
+                padding         : .5rem 1.5rem;
+                border-radius   : .5rem;
+                margin-bottom   : 1rem;
+                background-color: var(--red);
+            }
+
+            .price {
+                @include titleTextStyle(5rem, var(--black));
+                margin-bottom: 1rem;
+                font-weight  : bolder;
+
+                span {
+                    font-size: 3rem;
+                    color    : var(--red);
+                }
+            }
+
+            ul {
+                padding: 1rem 0;
+
+                li {
+                    padding  : 1rem 0;
+                    font-size: 2rem;
+                    color    : var(--black);
+
+                    i {
+                        padding-right: .8rem;
+                        color        : var(--red);
+                    }
+                }
+            }
+        }
+    }
+}

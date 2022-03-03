@@ -1,0 +1,29 @@
+.services {
+
+    .box-container {
+
+        @include grid(31rem);
+
+        .box {
+
+            text-align      : center;
+            padding         : 2rem;
+            background-color: var(--light-bg);
+            border-radius   : .5rem;
+
+
+            img {
+                height       : 10rem;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                @include titleTextStyle(2rem, var(--black));
+            }
+
+            p {
+                @include paragraphTextStyle(1.5rem, var(--light-color));
+            }
+        }
+    }
+}
